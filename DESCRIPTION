@@ -1,9 +1,11 @@
 Package: calibreinterface
-Title: What the Package Does (one line, title case)
+Title: Read from your local calibre ebook manager
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-Depends: R (>= 3.5.1)
-License: What license is it under?
+Authors@R: person("Roel M.", "Hogervorst", email ="hogervorst.rm@gmail.com", role = c("cre", "aut"), comment = c(ORCID = "0000-0001-7509-0328"))
+Description: Connect to your calibre instance, read the database and extract information.
+License: MIT + file LICENSE
+URL: https://github.com/rmhogervorst/calibreinterface/
+BugReports: https://github.com/rmhogervorst/calibreinterface/issues/
+ByteCompile: true
 Encoding: UTF-8
 LazyData: true
