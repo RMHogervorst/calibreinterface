@@ -1,0 +1,24 @@
+example query
+
+
+SELECT id, title,
+               (SELECT name FROM books_authors_link AS bal JOIN authors ON(author = authors.id) WHERE book = books.id) authors,
+               (SELECT name FROM publishers WHERE publishers.id IN (SELECT publisher from books_publishers_link WHERE book=books.id)) publisher,
+               (SELECT rating FROM ratings WHERE ratings.id IN (SELECT rating from books_ratings_link WHERE book=books.id)) rating,
+               (SELECT MAX(uncompressed_size) FROM data WHERE book=books.id) size,
+               (SELECT name FROM tags WHERE tags.id IN (SELECT tag from books_tags_link WHERE book=books.id)) tags,
+               (SELECT format FROM data WHERE data.book=books.id) formats,
+               isbn,
+               path,
+               pubdate
+        FROM books
+
+
+#####
+#So if I want to know the location of the book I have to find the book(id)
+in th book table there is a path which, combined with the base path: ~/Calibre Library-all/
+will go to the folder with the book and metadata.
+This metadata is xml with lots of info, identifiers, names et.
+
+## bute we could use the megaquery from online filter on EPUB read those files
+## in?
